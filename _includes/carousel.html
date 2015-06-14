@@ -1,7 +1,7 @@
 {% if page.carousel %}
   <div class="flexslider">
     <ul class="slides">
-      {% for slides in page.carousel %}
+      {% for slides in page.carousel.slides %}
       <li{% if slides.bgimg %} style="background-image: url({{ slides.bgimg | asset_url }}); {{ slides.css }}"{% endif %}{% if slides.url %} data-url="{{ slides.url }}"{% endif %}>
       {{ slides.content }}
       </li>
@@ -31,7 +31,7 @@ $(window).load(function() {
 .flexslider, .flexslider .slides, .flexslider .slides li {
   background-size: contain;
   background-repeat: no-repeat;
-  height: 400px;
+  height: {{ page.carousel.height }}px;
 }
 </style>
 {% endif %}
