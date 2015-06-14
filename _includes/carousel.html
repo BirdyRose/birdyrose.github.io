@@ -1,9 +1,8 @@
 {% if page.carousel %}
-  <div class="flexslider" style="height: 400px;">
+  <div class="flexslider">
     <ul class="slides">
       {% for slides in page.carousel %}
-      <li{% if slides.bgimg %} style="background-size: cover; background-image: url({{ slides.bgimg | asset_url }}); {{ slides.css }}"{% endif %}{% if slides.url %} data-url="{{ slides.url }}"{% endif %}>
-      <img src="{{ slides.bgimg | asset_url }}">
+      <li{% if slides.bgimg %} style="background-image: url({{ slides.bgimg | asset_url }}); {{ slides.css }}"{% endif %}{% if slides.url %} data-url="{{ slides.url }}"{% endif %}>
       {{ slides.content }}
       </li>
       {% endfor %}
@@ -21,12 +20,17 @@ $(window).load(function() {
   $('.flexslider').flexslider({
     animation: "fade",
     controlNav: false,
-    directionNav: true,
+    directionNav: false,
     slideshowSpeed: 5000,
     animationSpeed: 600,
-    touch: true,
-    height: 400
+    touch: true
   });
 });
 </script>
+<style>
+.flexslider, .flexslider .slides, .flexslider .slides li {
+  background-size: cover;
+  height: 400px;
+}
+</style>
 {% endif %}
