@@ -1,0 +1,29 @@
+{% if page.carousel %}
+  <div class="flexslider">
+    <ul class="slides">
+      {% for slides in page.carousel %}
+      <li{% if slides.bgimg %} style="background-image: url({{ slides.bgimg | asset_url }}); {{ slides.css }}"{% endif %}{% if slides.url %} data-url="{{ slides.url }}"{% endif %}>
+      {{ slides.content }}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+{% if page.carousel %}
+<!-- Flexslider Library  -->
+<script src="/js/flexslider.min.js"></script>
+<!-- Initialisation Code  -->
+<script type="text/javascript">
+// Initialise FlexSlider for Carousels
+$(window).load(function() {
+    $('.flexslider').flexslider({
+    animation: "fade",
+    controlNav: false,
+    directionNav: true,
+    slideshowSpeed: 5000,
+    animationSpeed: 600,
+    touch: true
+    });
+});
+</script>
+{% endif %}
