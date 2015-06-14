@@ -13,7 +13,7 @@ layout: default
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          <p>{% if post.excerpt %}{{ post.excerpt }}{% else %}{{ post.content | truncate: 200  }}{% endif %}</p>More...
+          <p>{% if post.excerpt %}{{ post.excerpt }}{% else %}{% if post.content contains '<!--break-->' %}{{ post.content | split:'<!--break-->' | first }}{% endif %}{% endif %}{% if post.excerpt %}<a href="{{ post.url | prepend: site.baseurl }}">More...</a>{% endif %}</p>
         </h2>
       </li>
     {% endfor %}
