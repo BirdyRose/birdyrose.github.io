@@ -1,5 +1,5 @@
 {% if page.carousel %}
-  <div class="flexslider">
+  <div class="flexslider" style="height: 400px;">
     <ul class="slides">
       {% for slides in page.carousel %}
       <li{% if slides.bgimg %} style="background-image: url({{ slides.bgimg | asset_url }}); {{ slides.css }}"{% endif %}{% if slides.url %} data-url="{{ slides.url }}"{% endif %}>
@@ -23,8 +23,7 @@ $(window).load(function() {
     directionNav: true,
     slideshowSpeed: 5000,
     animationSpeed: 600,
-    touch: true,
-    height: 384
+    touch: true
   });
 });
 </script>
