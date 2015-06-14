@@ -21,12 +21,14 @@
 									mapTypeControl: false,
 								}
 							);
+							{% if page.map.marker %}
 							var marker = new google.maps.Marker({
 								"map": map,
 								"position": results[0].geometry.location,
 								"title": "{{ page.map.marker.title }}"{% if page.map.marker.icon %},
 								"icon": "{{ page.map.marker.icon | asset_url }}"{% endif %}
 							});
+							{% endif %}
 						}
 					}
 				);
