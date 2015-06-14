@@ -2,7 +2,7 @@
   <div class="flexslider" style="height: 400px;">
     <ul class="slides">
       {% for slides in page.carousel %}
-      <li{% if slides.bgimg %} style="background-image: url({{ slides.bgimg | asset_url }}); {{ slides.css }}"{% endif %}{% if slides.url %} data-url="{{ slides.url }}"{% endif %}>
+      <li{% if slides.bgimg %} style="background-size: cover; background-image: url({{ slides.bgimg | asset_url }}); {{ slides.css }}"{% endif %}{% if slides.url %} data-url="{{ slides.url }}"{% endif %}>
       {{ slides.content }}
       </li>
       {% endfor %}
