@@ -5,7 +5,7 @@ permalink: /contact/
 map:
     id: "map"
     zoom: 13
-    height: 300
+    height: '300px'
     address: "5 Chalvedon Square"
     marker: { title: "Marker Title" }
     center: { lat: 54.15134, lng: -3.87543 }
