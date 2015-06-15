@@ -8,7 +8,7 @@
 	{% for shortcodeBegin in shortcodeBegins %}
 		{% capture shortcode %}{{ shortcodeBegin | split: ']' }}{% endcapture %}
 		{% capture shortcode %}{{ shortcode.first }}{% endcapture %}
-		{{ shortcode | json }}
+		{% capture codename %}{{ (shortcode | split: ' ')[0] }}{% endcapture %}
 	{% endfor %}
 
 	{{ include.load }}
