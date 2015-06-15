@@ -8,7 +8,7 @@
 	{% for shortcodeBegin in shortcodeBegins %}
 		{% assign shortcodeEnd = shortcodeBegin | split: ']' %}
 		{% assign shortcode = shortcodeEnd.first %}
-		{{ shortcode | split: ' ' | first | trim }}
+		{{ shortcode | split: ' ' | first }}
 	{% endfor %}
 
 	{{ include.load }}
