@@ -7,9 +7,10 @@
 	shortcode found
 	{% for shortcodeBegin in shortcodeBegins %}
 		{% assign shortcodeEnd = shortcodeBegin | split: ']'  %}
-		{% assign shortcode = shortcodeEnd.first | append '{' | prepend '}' %}
-		{{ shortcodeEnd.first | split " " | first }}
-
+		{% assign shortcodeCode = shortcodeEnd.first %}
+		{% assign tmp = shortcodeCode | split " " %}
+		{% assign shortcode = tmp | first | trim %}
+		{{ shortcode }}
 	{% endfor %}
 
 	{{ include.load }}
