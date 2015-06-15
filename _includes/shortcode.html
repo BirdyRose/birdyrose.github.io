@@ -9,7 +9,7 @@
 		{% assign shortcodeEnd = shortcodeBegin | split: ']'  %}
 		{% assign shortcodeCode = shortcodeEnd.first %}
 		{% assign tmp = shortcodeCode | split " " %}
-		{% assign shortcode = tmp | first | trim %}
+		{% assign shortcode = tmp | first %}
 		{{ shortcode }}
 	{% endfor %}
 
