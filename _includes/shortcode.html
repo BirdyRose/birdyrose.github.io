@@ -5,6 +5,11 @@
 {% assign shortcodeBegins = loadnew | split: '[' %}
 {% if shortcodeBegins.size > 1 %}
 	shortcode found
+	{% for shortcodeBegin in shortcodeBegins %}
+		{% assign shortcode = shortcodeBegin | split: ']' %}
+		{{ shortcode }}
+	{% endfor %}
+
 	{{ include.load }}
 {% else %}
 	{{ include.load }}
