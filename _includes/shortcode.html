@@ -6,8 +6,9 @@
 {% if shortcodeBegins.size > 1 %}
 	shortcode found
 	{% for shortcodeBegin in shortcodeBegins %}
-		{% assign shortcode = shortcodeBegin | split: ']'  %}
-		{{ shortcode.first }}
+		{% assign shortcodeEnd = shortcodeBegin | split: ']'  %}
+		{% assign shortcode = shortcodeEnd.first %}
+		{{ shortcode }}
 	{% endfor %}
 
 	{{ include.load }}
