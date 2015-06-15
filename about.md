@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<!-- [youtube width="800" height="500" video="M7lc1UVf-VE"] -->
+<!-- [youtube width="100%" height="500" video="dQw4w9WgXcQ"] -->
 
 {% gist parkr/931c1c8d465a04042403 %}
 

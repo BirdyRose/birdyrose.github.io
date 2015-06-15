@@ -1,1 +1,1 @@
-{% assign shortcodekeyfound = false %}{% for keys in key %}{% if keys == include.render %}{{variable[forloop.index0]}}{% assign shortcodekeyfound = true %}{% endif %}{% endfor %}{% if shortcodekeyfound == false %}{{default}}{% endif %}
+{% assign shortcodekeyfound = false %}{% for key in include.keys %}{% if key == include.render %}{{ include.vars[forloop.index0] }}{% assign shortcodekeyfound = true %}{% endif %}{% endfor %}{% if shortcodekeyfound == false %}{{ include.default }}{% endif %}
