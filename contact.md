@@ -4,18 +4,21 @@ title: Contact
 permalink: /contact/
 map:
     id: "map"
-    zoom: 13
+    zoom: 14
     height: '300px'
     address: "5 Chalvedon Square"
-    marker: { title: "Best Flat Evarr", "clickable": true, "infowindow": "<h1>Info on Flat</h1>" }
+    marker: { title: "Our Flat", "clickable": true, "infowindow": "<h1>Info on Flat</h1>", icon: "http://maps.google.com/mapfiles/kml/pal3/icon23.png" }
     center: { lat: 54.15134, lng: -3.87543 }
     markers:
       - address: "Beambridge SS13"
         title: "Beambridge SS13"
+        icon: http://maps.google.com/mapfiles/kml/pal4/icon15.png
       - address: "58 Wells Gardens"
         title: "Dads House"
+        icon: "http://maps.google.com/mapfiles/kml/pal3/icon39.png"
       - address: "10 Wickford Avenue SS13"
         title: "Liz's House"
+        icon: http://maps.google.com/mapfiles/kml/pal3/icon40.png
 
 ---
 

@@ -30,7 +30,7 @@
 									"position": results[0].geometry.location,
 									"title": "{{ page.map.marker.title }}",
 									"clickable": {% if page.map.marker.clickable %}true{% else %}false{% endif %}{% if page.map.marker.icon %},
-									"icon": "{{ page.map.marker.icon | asset_url }}"{% endif %}
+									"icon": "{{ page.map.marker.icon }}"{% endif %}
 								});
 
 								{% if page.map.marker.infowindow %}
@@ -57,7 +57,7 @@
 									"position": results[0].geometry.location,
 									"title": "{{ marker.title }}",
 									"clickable": {% if marker.clickable %}true{% else %}false{% endif %}{% if marker.icon %},
-									"icon": "{{ marker.icon | asset_url }}"{% endif %}
+									"icon": "{{ marker.icon }}"{% endif %}
 								});
 								{% if marker.infowindow %}
 								var infowindow = new google.maps.InfoWindow({
