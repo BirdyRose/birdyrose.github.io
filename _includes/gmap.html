@@ -8,30 +8,71 @@
 			var centerXY = {{ page.map.center | jsonify }};
 			var geocoder = new google.maps.Geocoder(); 
 			if (typeof geocoder != "undefined") {
+				var map = '';
 				geocoder = new google.maps.Geocoder();
 				geocoder.geocode(
 					{ "address":"{{ page.map.address }}" },
 					function(results,status) {
 						if (status == google.maps.GeocoderStatus.OK) {
-							var map = new google.maps.Map(
+							map = new google.maps.Map(
 								document.getElementById('{{ page.map.id }}'),
 								{
 									center: results[0].geometry.location,
 									zoom: {{ page.map.zoom }},
-									mapTypeControl: false,
+									mapTypeControl: {% if page.map.typecontrol %}true{% else %}false{% endif %},
+									draggable: {% if page.map.draggable %}true{% else %}false{% endif %},
+									scrollwheel: {% if page.map.scrollwheel %}true{% else %}false{% endif %}
 								}
 							);
 							{% if page.map.marker %}
-							var marker = new google.maps.Marker({
-								"map": map,
-								"position": results[0].geometry.location,
-								"title": "{{ page.map.marker.title }}"{% if page.map.marker.icon %},
-								"icon": "{{ page.map.marker.icon | asset_url }}"{% endif %}
-							});
+								var marker = new google.maps.Marker({
+									"map": map,
+									"position": results[0].geometry.location,
+									"title": "{{ page.map.marker.title }}",
+									"clickable": {% if page.map.marker.clickable %}true{% else %}false{% endif %}{% if page.map.marker.icon %},
+									"icon": "{{ page.map.marker.icon | asset_url }}"{% endif %}
+								});
+
+								{% if page.map.marker.infowindow %}
+									var infowindow = new google.maps.InfoWindow({
+										content: "<div>{{ page.map.marker.infowindow }}</div>"
+									});
+
+									google.maps.event.addListener(marker, 'click', function() {
+										infowindow.open(map,marker);
+									});
+								{% endif %}
 							{% endif %}
 						}
 					}
 				);
+				{% if page.map.markers %}
+					{% for marker in page.map.markers %}
+					geocoder.geocode(
+						{ "address":"{{ marker.address }}" },
+						function(results,status) {
+							if (status == google.maps.GeocoderStatus.OK) {
+								var marker = new google.maps.Marker({
+									"map": map,
+									"position": results[0].geometry.location,
+									"title": "{{ marker.title }}",
+									"clickable": {% if marker.clickable %}true{% else %}false{% endif %}{% if marker.icon %},
+									"icon": "{{ marker.icon | asset_url }}"{% endif %}
+								});
+								{% if marker.infowindow %}
+								var infowindow = new google.maps.InfoWindow({
+			      					content: "<div>{{ marker.infowindow }}</div>"
+			  					});
+
+			  					google.maps.event.addListener(marker, 'click', function() {
+			    					infowindow.open(map,marker);
+			  					});
+			  					{% endif %}
+							}
+						}
+					);
+					{% endfor %}
+				{% endif %}
 			}
 		});
 	</script>

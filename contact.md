@@ -7,8 +7,15 @@ map:
     zoom: 13
     height: '300px'
     address: "5 Chalvedon Square"
-    marker: { title: "Marker Title" }
+    marker: { title: "Best Flat Evarr", "clickable": true, "infowindow": "<h1>Info on Flat</h1>" }
     center: { lat: 54.15134, lng: -3.87543 }
+    markers:
+      - address: "Beambridge SS13"
+        title: "Beambridge SS13"
+      - address: "58 Wells Gardens"
+        title: "Dads House"
+      - address: "10 Wickford Avenue SS13"
+        title: "Liz's House"
 
 ---
 
