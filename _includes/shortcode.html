@@ -1,5 +1,5 @@
-{% capture loadnew %}{{ include.load | replace: '<!--[', '[' }}{% endcapture %}
-{% capture loadnew %}{{ loadnew | replace: ']-->', ']' }}{% endcapture %}
+{% capture loadnew %}{{ include.load | replace: '<!-- [', '[' }}{% endcapture %}
+{% capture loadnew %}{{ loadnew | replace: '] -->', ']' }}{% endcapture %}
 {% capture loadnew %}{{ loadnew | replace: ']</p>', ']' }}{% endcapture %}
 {% capture loadnew %}{{ loadnew | replace: '<p>[', '[' }}{% endcapture %}
 {% assign shortcodeBegins = loadnew | split: '[' %}
