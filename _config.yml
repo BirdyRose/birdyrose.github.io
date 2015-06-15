@@ -1,6 +1,6 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: Birdy Rose Dev Site
+email: use facebook
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -17,6 +17,22 @@ disqus:
     shortname: birdyroseart
 
 defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      map:
+        id: "map"
+        zoom: 1
+        height: '300px'
+        styles: '[ { "stylers": [ { "hue": "#00aaff" }, { "lightness": 25 }, { "saturation": -70 }, { "gamma": 1.24 } ] },{ "elementType": "labels", "stylers": [ { "visibility": "simplified" } ] },{ "featureType": "poi", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative.neighborhood", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative.land_parcel", "stylers": [ { "visibility": "off" } ] },{ "featureType": "road.local", "stylers": [ { "visibility": "off" } ] } ]'
+        center: { lat: 54.15134, lng: -3.87543 }
+      carousel:
+        controlNav: true
+        directionNav: true
+        touch: true
+        useCSS: true
+        animationLoop: true
   -
     scope:
       path: "" # an empty string here means all files in the project

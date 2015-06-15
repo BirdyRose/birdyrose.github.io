@@ -1,4 +1,4 @@
-{% if page.map %}
+{% if page.map.address %}
 {% if !page.map.id  %}{% assign page.map.id = 'map' %}{% endif %}
 <section>
 	<div id="{{ page.map.id }}" style="width: 100%; height: {{ page.map.height }};"></div>
@@ -21,7 +21,8 @@
 									zoom: {{ page.map.zoom }},
 									mapTypeControl: {% if page.map.typecontrol %}true{% else %}false{% endif %},
 									draggable: {% if page.map.draggable %}true{% else %}false{% endif %},
-									scrollwheel: {% if page.map.scrollwheel %}true{% else %}false{% endif %}
+									scrollwheel: {% if page.map.scrollwheel %}true{% else %}false{% endif %}{%if page.map.styles %},
+									styles: {{page.map.styles}}{% endif %}
 								}
 							);
 							{% if page.map.marker %}

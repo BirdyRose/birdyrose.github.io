@@ -1,4 +1,4 @@
-{% if page.carousel %}
+{% if page.carousel.slides %}
   <div class="flexslider">
     <ul class="slides">
       {% for slides in page.carousel.slides %}
@@ -8,33 +8,42 @@
       {% endfor %}
     </ul>
   </div>
-{% endif %}
-{% if page.carousel %}
-<!-- Flexslider Library  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/jquery.flexslider.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/flexslider.min.css" rel="stylesheet">
-<!-- Initialisation Code  -->
-<script type="text/javascript">
-// Initialise FlexSlider for Carousels
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "fade",
-    controlNav: true,
-    directionNav: true,
-    slideshowSpeed: 5000,
-    animationSpeed: 600,
-    touch: true
+  <!-- Flexslider Library  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/jquery.flexslider.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/flexslider.min.css" rel="stylesheet">
+  <!-- Initialisation Code  -->
+  <script type="text/javascript">
+  // Initialise FlexSlider for Carousels
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      animation: {% if page.carousel.animation %}{{page.carousel.animation}}{% else %}'fade'{% endif %},
+      controlNav: {% if page.carousel.controlNav %}true{% else %}false{% endif %},
+      directionNav: {% if page.carousel.directionNav %}true{% else %}false{% endif %},
+      slideshowSpeed: {% if page.carousel.slideshowSpeed %}{{ page.carousel.slideshowSpeed }}{% else %}5000{% endif %},
+      animationSpeed: {% if page.carousel.animationSpeed %}{{ page.carousel.animationSpeed }}{% else %}600{% endif %},
+      startAt: {% if page.carousel.startAt %}{{ page.carousel.statAt }}{% else %}0{% endif %},
+      touch: {% if page.carousel.touch %}true{% else %}false{% endif %},
+      useCSS: {% if page.carousel.useCSS %}true{% else %}false{% endif %},
+      video: {% if page.carousel.video %}true{% else %}false{% endif %},
+      mousewheel: {% if page.carousel.mousewheel %}true{% else %}false{% endif %},
+      pauseOnAction: {% if page.carousel.pauseOnAction %}true{% else %}false{% endif %},
+      pauseOnHover: {% if page.carousel.pauseOnHover %}true{% else %}false{% endif %},
+      pausePlay: {% if page.carousel.pausePlay %}true{% else %}false{% endif %},
+      animationLoop: {% if page.carousel.animationLoop %}true{% else %}false{% endif %},
+    });
   });
-});
-</script>
-<style>
-.flexslider, .flexslider .slides, .flexslider .slides li {
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: {{ page.carousel.height }}px;
-}
-.flex-direction-nav a {
-  height: 3em;
-}
-</style>
+  </script>
+  <style>
+  .flexslider, .flexslider .slides, .flexslider .slides li {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: {{ page.carousel.height }}px;
+  }
+  .flex-direction-nav a {
+    height: 3em;
+  }
+  .flex-pauseplay a {
+    height: 2em;
+  }
+  </style>
 {% endif %}

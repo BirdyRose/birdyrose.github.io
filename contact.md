@@ -3,12 +3,9 @@ layout: page
 title: Contact
 permalink: /contact/
 map:
-    id: "map"
-    zoom: 14
-    height: '300px'
+    zoom: 13
     address: "5 Chalvedon Square"
     marker: { title: "Our Flat", "clickable": true, "infowindow": "<h1>Info on Flat</h1>", icon: "http://maps.google.com/mapfiles/kml/pal3/icon23.png" }
-    center: { lat: 54.15134, lng: -3.87543 }
     markers:
       - address: "Beambridge SS13"
         title: "Beambridge SS13"
