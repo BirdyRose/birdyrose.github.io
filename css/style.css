@@ -1,0 +1,166 @@
+@import url(//fonts.googleapis.com/css?family=Slabo+27px);
+body, p, input, textarea, h1, h2, h3, h4, h5, h6 {
+  font-family: "Slabo 27px", serif;
+  font-size: 20px;
+}
+main {
+  max-width: 800px;
+  padding: 2em;
+  -webkit-mix-blend-mode: hard-light;
+  -moz-mix-blend-mode: hard-light;
+  -ms-mix-blend-mode: hard-light;
+  -o-mix-blend-mode: hard-light;
+  mix-blend-mode: hard-light;
+  background: rgba(255,255,255,0.5);
+}
+body:not(.page-home) header nav li {
+  display: inline-block;
+}
+body:not(.page-home) header nav li a {
+  display: block;
+  min-width: 130px;
+}
+body:not(.page-home) header nav li a.home {
+  height: 69px;
+  background: url("../img/scaled-at-25/Home.png") no-repeat;
+}
+body:not(.page-home) header nav li a.bio {
+  height: 50px;
+  background: url("../img/scaled-at-25/artist bio.png") no-repeat;
+}
+body:not(.page-home) header nav li a.gallery {
+  height: 60px;
+  background: url("../img/scaled-at-25/Gallery.png") no-repeat;
+}
+body:not(.page-home) header nav li a.exhibitions {
+  height: 41px;
+  background: url("../img/scaled-at-25/Exhibitions.png") no-repeat;
+}
+body:not(.page-home) header nav li a.blog {
+  height: 45px;
+  background: url("../img/scaled-at-25/Blog.png") no-repeat;
+}
+
+body.hover.page-home header nav li a {
+  transition: 1s left;
+}
+body.hover.page-home header nav li a.home:hover {
+  left: -125px;
+}
+body.hover.page-home header nav li a.bio:hover {
+  left: -115px;
+}
+body.hover.page-home header nav li a.gallery:hover {
+  left: 250px;
+}
+body.hover.page-home header nav li a.exhibitions:hover {
+  left: 265px;
+}
+body.hover.page-home header nav li a.blog:hover {
+  left: 310px;
+}
+body.page-home header nav li a.home {
+  background: url("../img/scaled-at-50/Home.png") no-repeat;
+  position: absolute;
+  left: -91.5px;
+  top: 153px;
+  width: 251.5px;
+  height: 138px;
+  z-index: 3;
+}
+body.page-home header nav li a.bio {
+  background: url("../img/scaled-at-50/artist bio.png") no-repeat;
+  position: absolute;
+  left: -82.5px;
+  top: 112px;
+  width: 213px;
+  height: 100.5px;
+  z-index: 4;
+}
+body.page-home header nav li a.gallery {
+  background: url("../img/scaled-at-50/Gallery.png") no-repeat;
+  position: absolute;
+  left: 216.5px;
+  top: 282.5px;
+  width: 243.5px;
+  height: 159.5px;
+  z-index: 5;
+}
+body.page-home header nav li a.exhibitions {
+  background: url("../img/scaled-at-50/Exhibitions.png") no-repeat;
+  position: absolute;
+  left: 224px;
+  top: 220.5px;
+  width: 200.5px;
+  height: 81.5px;
+  z-index: 6;
+}
+body.page-home header nav li a.blog {
+  background: url("../img/scaled-at-50/Blog.png") no-repeat;
+  position: absolute;
+  left: 287px;
+  top: 123.5px;
+  width: 120px;
+  height: 90px;
+  z-index: 7;
+}
+body.page-home header {
+  background: url("../img/scaled-at-50/Bg.png") center 90px no-repeat;
+  height: 850px;
+  z-index: 1;
+}
+body.page-home header .logo {
+  width: 378px;
+  height: 143.5px;
+  z-index: 2;
+  margin: auto;
+  position: absolute;
+}
+body.page-home header, body.page-home header nav {
+	width: 383px;
+}
+body.page-home header, body.page-home header .logo {
+  margin: auto;
+}
+body.left header {
+  margin: 0;
+  margin-left: 100px;
+}
+body.page-home header nav {
+	position: relative;
+}
+header nav ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+header nav ul li {
+	list-style: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+header nav ul li a {
+  color: transparent;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+body.page-blog {
+  background: url(../img/scaled-at-50/blog-bg.png) right 100px no-repeat;
+}
+
+body.page-exhibitions {
+  background: url(../img/scaled-at-50/exhibitions-bg.png) right 100px no-repeat;
+}
+
+body.page-gallery {
+  background: url(../img/scaled-at-50/gallery-bg.png) left 100px no-repeat;
+}
+
+body.page-bio {
+  background: url(../img/scaled-at-50/bio-bg.png) right 100px no-repeat;
+}
+body.page-bio main {
+  margin-top: 200px;
+}

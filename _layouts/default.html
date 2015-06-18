@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html>
-
-  {% include head.html %}
-
-  <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
+  <head>
+    {% include head-standard.html %}
+    {% if page.headextra %}{{ page.headextra }}{% endif %}
+  </head>
+  <body class="{% if page.body-class %}{{ page.body-class }}{% endif %}">
+    <div class="page-content {% if page.wrapper-class %}{{ page.wrapper-class }}{% endif %}">
       <div class="wrapper">
+        {% include header.html %}
         {{ content }}
       </div>
     </div>
-
-    {% include footer.html %}
-
   </body>
-
 </html>
