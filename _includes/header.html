@@ -11,7 +11,7 @@
       {% assign pages = site.pages | sort: 'priority' %}
       {% for page in pages %}
       {% if page.title %}
-      <li><a  href="{{ page.url | prepend: site.baseurl }}" class="{{ page.title | downcase }}"></a></li>
+      <li><a  href="{{ page.url | prepend: site.baseurl }}" class="{{ page.url | downcase | replace: '/' }}"></a></li>
       {% endif %}
       {% endfor %}
     </ul>

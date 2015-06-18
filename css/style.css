@@ -6,12 +6,15 @@ body, p, input, textarea, h1, h2, h3, h4, h5, h6 {
 main {
   max-width: 800px;
   padding: 2em;
+  background: rgba(255,255,255,0.5);
+}
+main p, main article {
+
   -webkit-mix-blend-mode: hard-light;
   -moz-mix-blend-mode: hard-light;
   -ms-mix-blend-mode: hard-light;
   -o-mix-blend-mode: hard-light;
   mix-blend-mode: hard-light;
-  background: rgba(255,255,255,0.5);
 }
 body:not(.page-home) header nav li {
   display: inline-block;
