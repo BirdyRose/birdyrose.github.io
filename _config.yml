@@ -9,6 +9,7 @@ twitter_username: birdyroseart
 github_username:  birdyrose
 permalink: ':year/:month/:day/:title/'
 # Build settings
+full_rebuild: true
 markdown: kramdown
 disqus:
     shortname: birdyroseart
