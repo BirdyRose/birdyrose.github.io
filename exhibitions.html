@@ -19,7 +19,8 @@ map:
       - address: "10 Wickford Avenue SS13"
         title: "Liz's House"
         icon: //maps.google.com/mapfiles/kml/pal3/icon40.png
-
+list_for: exhibitions
+list_limit: 3
 ---
 
 <main>
@@ -31,4 +32,37 @@ map:
 
     You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
   </article>
+  <div class="post">
+    {% if page.pages >= 1 %}
+    <ul class="post-list">
+      Page {{ page.curpage }} of {{ page.pages }}, 
+      {{ page.list_for }} {{ page.min_rec }} to {{ page.max_rec }}
+      {% for item in page.list %}
+        <li>
+          <h2>
+            <a class="post-link" href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a>
+          </h2>
+          <span class="post-meta">{{ item.pub_date | date: "%b %-d, %Y" }}</span>
+          {{ item.excerpt }}
+          <a href="{{ item.url | prepend: site.baseurl }}"><small>More...</small></a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if page.pages > 1 %}
+      {% capture nextpg %}{{page.curpage | to_i | plus: 1 }}{% endcapture %}
+      {% capture prevpg %}{{page.curpage | to_i | minus: 1 }}{% endcapture %}
+      <div class="pagination">
+      {% if page.curpage > 1 %}
+        <a rel="prev" href="{{ page.page_baseurl | prepend: site.baseurl | append: prevpg | replace: '//', '/' }}">&laquo; Prev</a>
+      {% endif %}
+      {% for pg in (1..page.pages) %}
+        <a rel="prev" href="{{ page.page_baseurl | prepend: site.baseurl | append: pg | replace: '//', '/' }}">{{ pg }}</a>
+      {% endfor %}
+      {% if page.curpage < page.pages %}
+        <a rel="prev" href="{{ page.page_baseurl | prepend: site.baseurl | append: nextpg | replace: '//', '/' }}">Next &raquo;</a>
+      {% endif %}
+      </div>
+    {% endif %}
+  </div>
 </main>
