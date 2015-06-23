@@ -1,0 +1,8 @@
+{% for item in include.collection %}
+	<url>
+		<loc>{{ item.url | prepend: site.base_url }}</loc>{% if item.date %}
+		<lastmod>{{ item.date | date_to_xmlschema }}</lastmod>{% endif %}
+		<changefreq>{% if item.sitemap.update_freq %}{{ item.sitemap.update_freq }}{% else %}weekly{% endif %}</changefreq>
+		<priority>{% if item.sitemap.priority %}{{ item.sitemap.priority }}{% else %}0.8{% endif %}</priority>
+	</url>
+{% endfor %}
