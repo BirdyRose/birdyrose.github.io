@@ -1,20 +1,21 @@
 # Site settings
 title: Birdy Rose Dev Site
 email: use facebook
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: > # Welcome to my little corner of the interwebs where I want to showcase my art,
+  blog a little and keep everyone up-to-date with what I am up to.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://birdyrose.github.io" # the base hostname & protocol for your site
 twitter_username: birdyroseart
 github_username:  birdyrose
-
+permalink: ':year/:month/:day/:title/'
 # Build settings
 markdown: kramdown
-
 disqus:
     shortname: birdyroseart
+collections:
+  exhibitions:
+    output: true
+    title: Exhibitions
 
 defaults:
   -
