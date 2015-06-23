@@ -20,6 +20,16 @@ map:
         icon: http://maps.google.com/mapfiles/kml/pal3/icon40.png
 
 ---
+
+<main style="margin-top: 2em; position: absolute; right: 0; background-color: rgba(0,0,0,.5); text-align: center;">
+{% for img in site.static_files %}
+  {% capture path %}{{ img["path"] }}{% endcapture %}
+  {% if path contains "/img/gallery/" %}
+    <img src="{{ path | asset_url }}" style="box-sizing: border-box; width: 48%; height: auto; display: inline-block;">
+  {% endif %}
+{% endfor %}
+</main>
+
 {% if false %}
 {% include gmap.html %}
 
