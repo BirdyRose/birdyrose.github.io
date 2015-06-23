@@ -16,6 +16,9 @@ collections:
   exhibitions:
     output: true
     title: Exhibitions
+  content-sections:
+    output: true
+    title: Content Sections
 
 defaults:
   -
